@@ -1,0 +1,38 @@
+{% extends "products/base.html" %}
+
+{% block content %}
+
+<div class="sorted-list">
+    <form action="" method="get">
+        <select multiple="multiple" size="4" name="sort">
+          <option disabled>Выберите способ сортировки</option>
+          <option value="name">По названию</option>
+          <option value="price">По цене</option>
+          <option value="date">По дате</option>
+        </select>
+
+
+        <button type='submit'>Применить</button>
+    </form>
+</div>
+    <h2>Товары</h2>
+
+
+<ul class="list-articles">
+	{% for product in products %}
+	<li>
+
+	<p class="name">Название: {{product.name}}</p>
+	<p class="description">Описание: {{product.description|linebreaks|truncatewords:50}}</p>
+    <p class="price">Цена: {{product.price}}</p>
+    <p class="price">Дата: {{product.date}}</p>
+	<a href="{% url 'update_product' pk=product.id %}">Обновить</a>
+    <a href="{% url 'delete_product' pk=product.id %}">Удалить</a>
+    <a href="{% url 'product_detail' pk=product.id %}">Просмотреть</a>
+    </li>
+
+	{% endfor %}
+</ul>
+
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "products/base.html" %}
+
+{% block content %}
+
+<div class="form-group">
+    <h2>Описание товара</h2>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>{{ form.name }} </p>
+        <p>{{ form.description }}</p>
+        <p>{{ form.price }}</p>
+        <p><button type="submit">Обновить данные</button></p>
+    </form>
+</div>
+
+{% endblock %}

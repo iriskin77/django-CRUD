@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>TUT</title>
+   </head>
+   <body>
+      <form method="post">{% csrf_token %}
+         <p>Вы точно хотите удалить товар"{{ product }}"?</p>
+         <input type="submit" value="Подтвердить">
+      </form>
+   </body>
+</html>

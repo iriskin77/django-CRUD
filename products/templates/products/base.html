@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html>
+
+<header class="header">
+    <nav class="menu">
+        <ul class="menu__ul">
+            <li><a class="menu__link" href="{% url 'list_products' %}">Список товаров</a></li>
+            <li><a class="menu__link" href="{% url 'add_product' %}">Добавить товар</a></li>
+            <li><a class="menu__link" href="{% url 'search_products' %}">Поиск (фильтр) товаров</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+<div class="content">
+    {% block content %}
+    {% endblock %}
+</div>
+</body>

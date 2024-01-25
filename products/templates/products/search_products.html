@@ -1,0 +1,29 @@
+{% extends "products/base.html" %}
+
+{% block content %}
+
+    <h1>Поиск продуктов</h1>
+
+<form method="get">
+    {{ form.query }}
+    <input type="submit" value="Search">
+</form>
+
+<p>Запрос: {{ query }}</p>
+
+<p>Результаты поиска</p>
+
+<div class="found-products">
+    {% for found_product in found_products %}
+    <form action="" method="get">
+        <ul>
+            <li>Название: {{ found_product.name }}</li>
+            <li>Цена: {{ found_product.price }}</li>
+            <li>Описание: {{ found_product.description|linebreaks|truncatewords:50 }}</li>
+        </ul>
+    </form>
+    {% endfor %}
+</div>
+
+{% endblock %}
+
